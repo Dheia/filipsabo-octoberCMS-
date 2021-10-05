@@ -1,0 +1,6 @@
+plugin:
+    name: 'watchlearn.photos::lang.plugin.name'
+    description: 'watchlearn.photos::lang.plugin.description'
+    author: watchlearn
+    icon: oc-icon-photo
+    homepage: ''
