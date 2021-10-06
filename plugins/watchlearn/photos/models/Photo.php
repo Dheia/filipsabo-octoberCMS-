@@ -20,4 +20,15 @@ class Photo extends Model
      */
     public $rules = [
     ];
+
+
+    /* Relations */
+
+    public $attachOne = [
+        'poster' => 'System\Models\File'
+    ];
+
+    public $attachMany = [
+        'photo_gallery' => 'System\Models\File'
+    ];
 }

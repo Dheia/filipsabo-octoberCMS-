@@ -1,0 +1,16 @@
+columns:
+    photo_name:
+        label: 'Photo name'
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'Created at'
+        type: number
+        searchable: true
+        sortable: true
+    category:
+        label: Category
+        type: text
+        searchable: true
+        sortable: true

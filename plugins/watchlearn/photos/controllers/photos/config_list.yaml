@@ -1,0 +1,12 @@
+title: Photos
+modelClass: Watchlearn\Photos\Models\Photo
+list: $/watchlearn/photos/models/photo/columns.yaml
+recordUrl: 'watchlearn/photos/photos/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

@@ -1,0 +1,10 @@
+name: Categories
+form: $/watchlearn/photos/models/category/fields.yaml
+modelClass: Watchlearn\Photos\Models\Category
+defaultRedirect: watchlearn/photos/categories
+create:
+    redirect: 'watchlearn/photos/categories/update/:id'
+    redirectClose: watchlearn/photos/categories
+update:
+    redirect: watchlearn/photos/categories
+    redirectClose: watchlearn/photos/categories

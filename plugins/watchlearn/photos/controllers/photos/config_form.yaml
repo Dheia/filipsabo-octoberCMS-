@@ -1,0 +1,10 @@
+name: Photos
+form: $/watchlearn/photos/models/photo/fields.yaml
+modelClass: Watchlearn\Photos\Models\Photo
+defaultRedirect: watchlearn/photos/photos
+create:
+    redirect: 'watchlearn/photos/photos/update/:id'
+    redirectClose: watchlearn/photos/photos
+update:
+    redirect: watchlearn/photos/photos
+    redirectClose: watchlearn/photos/photos

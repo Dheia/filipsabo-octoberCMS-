@@ -4,3 +4,17 @@ plugin:
     author: watchlearn
     icon: oc-icon-photo
     homepage: ''
+navigation:
+    main-menu-item:
+        label: Photos
+        url: watchlearn/photos/photos
+        icon: icon-photo
+        sideMenu:
+            side-menu-item:
+                label: Category
+                url: watchlearn/photos/categories
+                icon: icon-leanpub
+            side-menu-item2:
+                label: Photos
+                url: watchlearn/photos/photos
+                icon: icon-photo

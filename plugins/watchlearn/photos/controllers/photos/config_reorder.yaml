@@ -1,0 +1,4 @@
+title: Photos
+modelClass: Watchlearn\Photos\Models\Photo
+toolbar:
+    buttons: reorder_toolbar

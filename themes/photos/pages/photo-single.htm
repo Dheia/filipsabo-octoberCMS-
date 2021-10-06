@@ -1,0 +1,44 @@
+url = "/photo/:id"
+layout = "default"
+title = "Photo single"
+
+[builderDetails]
+modelClass = "Watchlearn\Photos\Models\Photo"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "photo_name"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+
+{% if record %}
+
+
+<div class="container">
+    <ul>
+
+        <div class="row">
+            {% for image in record.photo_gallery %}
+                 <div class="col">
+                    <li>
+                        <a href="{{ image.path }}">
+
+                            <img src="{{ image.thumb(200, auto)}}" alt=""> 
+                         </a>
+                      </li>
+                </div>
+            {% endfor %}
+
+        </div>
+    </ul>
+</div>
+
+{% else %}
+{{ notFoundMessage }}
+{% endif %}
+
+<!-- <img src="{{ image.thumb(80,80, {'mode':'crop'}) }}" alt=""> -->
+<!-- {{ attribute(record, displayColumn) }} -->

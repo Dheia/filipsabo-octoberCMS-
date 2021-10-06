@@ -1,0 +1,31 @@
+fields:
+    photo_name:
+        label: 'Photo name'
+        span: left
+        type: text
+    category:
+        label: Category
+        span: auto
+        type: text
+    poster:
+        label: 'Photo upload'
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    photo_gallery:
+        label: 'Photo gallery'
+        mode: image
+        imageWidth: '80'
+        imageHeight: '80'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

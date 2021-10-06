@@ -1,0 +1,16 @@
+fields:
+    category_name:
+        label: 'Category name'
+        span: auto
+        type: text
+    category_poster:
+        label: 'Image upload'
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
