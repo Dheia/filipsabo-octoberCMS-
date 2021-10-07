@@ -1,6 +1,6 @@
-url = "/photos"
+title = "Albums"
 layout = "default"
-title = "Photos"
+url = "/albums/:page?"
 
 [builderList]
 modelClass = "Watchlearn\Photos\Models\Photo"
@@ -9,9 +9,9 @@ scopeValue = "{{ :scope }}"
 displayColumn = "photo_name"
 noRecordsMessage = "No records found"
 detailsPage = "photo-single"
-detailsKeyColumn = "id"
-detailsUrlParameter = "id"
-pageNumber = "{{ :page }}"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 5
 ==
 {% set records = builderList.records %}
 {% set displayColumn = builderList.displayColumn %}

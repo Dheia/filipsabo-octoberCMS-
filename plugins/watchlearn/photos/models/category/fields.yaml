@@ -14,3 +14,10 @@ fields:
             extension: auto
         span: auto
         type: fileupload
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: category_name
+            type: slug
+        type: text

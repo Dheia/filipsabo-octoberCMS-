@@ -1,11 +1,11 @@
-url = "/photo/:id"
+url = "/photos/:slug"
 layout = "default"
 title = "Photo single"
 
 [builderDetails]
 modelClass = "Watchlearn\Photos\Models\Photo"
-identifierValue = "{{ :id }}"
-modelKeyColumn = "id"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
 displayColumn = "photo_name"
 notFoundMessage = "Record not found"
 ==
@@ -25,7 +25,6 @@ notFoundMessage = "Record not found"
                  <div class="col">
                     <li>
                         <a href="{{ image.path }}">
-
                             <img src="{{ image.thumb(200, auto)}}" alt=""> 
                          </a>
                       </li>
