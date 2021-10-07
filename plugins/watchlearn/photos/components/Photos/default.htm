@@ -1,12 +1,23 @@
 {% set photos = __SELF__.photos %}
 
 
-<ul>
-    {% for photo in photos %}
 
-    
-    <li>{{photo.id}}</li>
+<div class="container">
 
+    <ul>
+        <div class="row">
+            {% for photo in photos %}
+                {% for image in photo.photo_gallery %}
+                <div class="col">
+                    <li>
+                        <a href="{{ image.path }}">
+                            <img src="{{ image.thumb(200, auto)}}" alt="">
+                        </a>
+                    </li>
+                </div>
+                {% endfor %}
+            {% endfor %}
 
-    {% endfor %}
-</ul>
+        </div>
+    </ul>
+</div>
