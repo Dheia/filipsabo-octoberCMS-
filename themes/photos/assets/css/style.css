@@ -1,3 +1,86 @@
-.active{
+.active {
     background-color: blue;
 }
+
+
+
+
+/*
+* CONTACT FORM
+*/
+
+/*topography*/
+#Contact-form h1,
+h2,
+h3,
+h4 {
+    font-family: "Mirza", cursive;
+}
+
+#Contact-form p,
+label {
+    font-family: "Roboto", sans-serif;
+}
+
+#Contact-form .navbar {
+    font-family: "Roboto", sans-serif;
+}
+
+#Contact-form {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    background: #383838;
+    color: #fff;
+}
+
+#Contact-form form {
+    margin: 30px auto;
+}
+
+#Contact-form textarea.form-control {
+    height: 135px;
+}
+
+#Contact-form .submit {
+    width: 150px;
+}
+
+/*Footer*/
+#Contact-form footer {
+    background: #e6e6e6;
+    height: 80px;
+    width: 100vw;
+}
+
+#Contact-form .brand-name {
+    padding-top: 30px;
+}
+
+#Contact-form footer .fa {
+    font-size: 22px;
+}
+#Contact-form .social {
+    padding-top: 30px;
+}
+
+#Contact-form .fa-space {
+    padding-left: 20px;
+}
+/*Media Queries*/
+@media (max-width: 460px) {
+    footer {
+        height: 120px;
+    }
+
+    .social {
+        padding-top: 10px;
+        float: left;
+        text-align: center;
+    }
+}
+
+
+/*
+* ----------
+*/

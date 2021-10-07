@@ -1,0 +1,54 @@
+url = "/contact"
+layout = "default"
+title = "Contact"
+
+[contactform]
+==
+<section id="Contact-form">
+    <br>
+    <div class="container">
+        <div class="contact-header" align="center">
+            <h2>Cotact Form</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <!-- Form  -->
+        <form data-request="contactform::onSend" data-request-validate data-request-flash>
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <h4 align="center"><strong>Company Name,</strong></h4>
+                    <p align="center"><strong>Address:</strong> Abcd, Near
+                        XYZ,<br>Country<br><br><strong>Contact:</strong> +91-123456987</p>
+                </div>
+                <div class="col-md-4 col-sm-4 ">
+                    <div class="form-group">
+                        <label for="exampleInputUsername">Name</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputUsername"
+                            placeholder=" Enter Your Name">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmailId">Email</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmailId"
+                            placeholder="Enter email">
+                    </div>
+
+
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="form-group">
+                        <label for="inputMessage">Message</label>
+                        <textarea class="form-control" name="content" for="inputMessage"
+                            placeholder="Enter Your Message"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-md btn-default submit" data-attach-loading><i
+                                class="fa fa-paper-plane"></i> </button>
+
+                    </div>
+                    <br>
+                </div>
+
+            </div>
+        </form>
+
+</section>
