@@ -1,0 +1,14 @@
+{% set photos = __SELF__.photos %}
+{% set record = __SELF__.record %}
+
+
+{{ photos}}
+{{ records}}
+{{ photo}}
+<ul>
+    {% for photos in photo %}
+
+    <li>{{photo.id}}</li>
+
+    {% endfor %}
+</ul>
