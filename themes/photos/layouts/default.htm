@@ -15,11 +15,12 @@ description = "Default layout"
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link href="{{ 'assets/css/contact.css'|theme }}" rel="stylesheet">
     <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
     {% styles %}
 </head>
 
-<body class="{{ 'page-'~this.page.id }}">
+<body class="{{ 'page-'~this.page.id }} preload">
 
     <!-- Header -->
     <header id="layout-header">
@@ -27,7 +28,7 @@ description = "Default layout"
     </header>
 
     <!-- Content -->
-    <section id="layout-content">
+    <section id="layout-contentt">
         {% page %}
     </section>
 

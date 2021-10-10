@@ -27,26 +27,46 @@ notFoundMessage = "Record not found"
 {% set detailsKeyColumn = builderList.detailsKeyColumn %}
 {% set detailsUrlParameter = builderList.detailsUrlParameter %}
 
+{{path}}
+
 {% if records %}
-    <div class="container mt-4">
-        <ul class="record-listt">
-            <div class="row">
-                {% for record in records %}
-                    {% if record.category_poster %}
-                        <div class="col-6">
-                             <li>
-                                <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
-                                    <img src=" {{ record.category_poster.thumb(500,auto) }}" alt="">
-
-                                </a>
-                             </li>
-                        </div>
-
-                   {% endif %}
-                {% endfor %}
-            </div>
-        </ul>
+<!-- <div class="container">
+    <div class="row">
+        <div class="col">
+            <img class="image__img" src="{{url('/storage/backstage.jpg')}}
+            " alt="">
+        </div>
+        <div class="col">
+            <img class="image__img" src="{{url('/storage/backstage.jpg')}}
+            " alt="">
+        </div>
     </div>
+</div> -->
+
+<div class="home-category col-10 container text-center mt-4 mb-4">
+    <h1>Filip Sabo Photography</h1>
+    <div class="row ">
+
+
+        {% for record in records %}
+        {% if record.category_poster %}
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 py-2  col-3 ">
+
+            <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                <div class="image ">
+                    <img  class="image__img" src=" {{ record.category_poster.path }}" alt="">
+                    <div class="image__overlay image__overlay--primary">
+                        <div class="image__title">{{record.category_name}}</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        {% endif %}
+        {% endfor %}
+       
+    </div>
+</div>
 {% endif %}
 
 {% if records.lastPage > 1 %}
@@ -67,7 +87,11 @@ notFoundMessage = "Record not found"
 </ul>
 {% endif %}
 
-{% set record = builderDetails.record %}
+<!-- {% set record = builderDetails.record %}
 {% set displayColumn = builderDetails.displayColumn %}
 {% set notFoundMessage = builderDetails.notFoundMessage %}
+ -->
 
+<!-- <img src="{{url('/storage/backstage.jpg')}} -->
+<!-- " alt=""> -->
+<!-- <img class="image__img" src=" {{ record.category_poster.thumb(500,auto) }}" alt=""> -->

@@ -6,22 +6,159 @@ title = "Photo single"
 ==
 {% set photos = photos.photos %}
 
-<div class="container">
+<!-- 
+<style>
+    div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        /* width: 180px; */
+    }
 
-    <ul>
-        <div class="row">
-            {% for photo in photos %}
-                {% for image in photo.photo_gallery %}
-                <div class="col">
-                    <li>
-                        <a href="{{ image.path }}">
-                            <img src="{{ image.thumb(200, auto)}}" alt="">
-                        </a>
-                    </li>
-                </div>
-                {% endfor %}
-            {% endfor %}
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
 
+    div.gallery img {
+        width: 50%;
+        height: auto;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .center {
+        margin: auto;
+        width: 90%;
+        border: 3px solid green;
+        text-align: center;
+
+        padding: 10px;
+    }
+</style> -->
+
+<style>
+    .example {
+        margin: 1em 0;
+        text-align: center;
+    }
+
+    .example img {
+        /* width: 20vw;
+  height: 20vw; */
+        width: 250px;
+        height: 250px;
+
+    }
+
+    .example-cover img {
+        object-fit: cover;
+    }
+
+    .example-contain img {
+        object-fit: contain;
+    }
+</style>
+
+
+<style>
+    .gallery img {
+  opacity: 0.5;
+}
+
+#overlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  text-align: center;
+}
+
+#overlay img {
+  border-radius: 5px;
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+</style>
+
+<style>
+    /* This only works with JavaScript, 
+       if it's not present, don't show loader */
+    .no-js #loader { display: none;  }
+    .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+</style>
+
+
+<div id="test" class="container mb-4 coll-md-8  cat-gallery">
+    <div class="row ">
+
+
+        {% for photo in photos %}
+        {% for image in photo.photo_gallery %}
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ml-0 example example-cover fadeInLeft ">
+            <a href="{{ image.path }}">
+                <img class="loader logo img " src="{{ image.path}}">
+            </a>
         </div>
-    </ul>
+        {% endfor %}
+        {% endfor %}
+    </div>
 </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+     var gallery = $('.cat-gallery');
+    // startingOpacity = gallery.find('img').css('opacity');
+    // console.log(startingOpacity);
+    // gallery.find('img').on('mouseenter mouseleave', function(event) {
+    //     var opacity = event.type === 'mouseenter' ? 1 : startingOpacity;
+    //     $(this).stop().fadeTo(200, opacity);
+    // });
+    // ----------- 
+    var overlay = $('<div>', {
+        id: 'overlay'
+    });
+    overlay.appendTo('body').hide();
+    gallery.find('a').on('click', function(event) {
+        var href = $(this).attr('href');
+        image = $('<img>', {
+            src: href,
+            alt: 'Image'
+        });
+        overlay.html(image).show();
+        // overlay.show();
+        event.preventDefault()
+    });
+    overlay.on('click', function() {
+        overlay.hide();
+    });
+    $(document).on('keyup', function(event) {
+        // console.log( event.which );  // which key  // number
+        if (event.which === 27) overlay.hide();
+    });
+    //loading login
+    var $body = $("body");
+    $('.login-btn').on('click', function() {
+        var e = $("#email").val(),
+            p = $("#password").val();
+        if (typeof e !== '' && p !== '') {
+            $body.addClass("loading");
+        };
+    });
+    $('.login-link').on('click', function() {
+        $body.addClass("loading");
+    });
+</script>
